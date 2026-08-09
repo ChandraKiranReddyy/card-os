@@ -45,7 +45,10 @@ See [SECURITY.md](./SECURITY.md).
 
 ## Deploy (free)
 
-See [DEPLOY.md](./DEPLOY.md) for Cloudflare Pages and Vercel.
+**Live site (GitHub Pages):**  
+https://chandrakiranreddyy.github.io/card-os/
+
+Auto-deploys on push to `main`. See [DEPLOY.md](./DEPLOY.md) for Pages, Cloudflare, and Vercel.
 
 ```bash
 npm run build   # → dist/

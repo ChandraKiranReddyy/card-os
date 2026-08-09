@@ -47,6 +47,12 @@ function RouteFallback() {
   )
 }
 
+/** Supports GitHub Pages subpath (/card-os/) and root deploys (Vercel/Cloudflare). */
+const routerBasename =
+  import.meta.env.BASE_URL === '/'
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function App() {
   return (
     <ErrorBoundary>
@@ -54,7 +60,7 @@ export default function App() {
         <PreferencesProvider>
           <TransactionProvider>
             <OptimizationProvider>
-              <BrowserRouter>
+              <BrowserRouter basename={routerBasename}>
                 <Routes>
                   <Route element={<AppShell />}>
                     <Route index element={<DashboardPage />} />
